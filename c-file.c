@@ -21,12 +21,9 @@ int main() {
    for(int i=0;i<5;i++){
     printf("Elements of Array :%d ",Array[i]);
    }
+   printf("\n");
    getch();
    printf("The sum of odd numbers is : %d",asmfunc());
-   
-    getch();
-    
-  
-    
+   getch();
     return 0;
 }
