@@ -3,25 +3,20 @@
 INCLUDE Irvine32.inc
 .data
 ;public asmfunc
-msg db "assebly procedure end now",0
-
 
 .code
-asmfunc PROC p1:DWORD, p2:DWORD
-    
-    push ebp
-    mov ebp,esp
-    mov eax, [ebp+12
-\] ; Move the first parameter into EAX
-    call writedec
-    call crlf
-    ;add eax, p2 ; Add the second parameter to EAX
-    call writedec
-    call crlf
-    mov edx, offset msg
-    call writestring
-    call crlf
-    
-    ret
-asmfunc ENDP
+asmfunc PROC 
+mov eax,0 
+mov esi,offset Array     ;load the address of array to the esi pointer 
+mov ecx,lengthof Array   ;load the length of the array to the ecx counter for the execution of array 
+OddNumber:
+movsx edx,word ptr[esi]   ;we used the movsx for the signed numbers 
+test edx,1                ;Test the number with 1 t find the odd number 
+jz Skip                   ;if the number is even skip the number 
+add eax,edx               ;add the next odd number to the previous odd number 
+Skip:
+add esi,type Array       ;moving to the new index of the array 
+loop OddNumber           ;execution of the loop 
+    ret              
+asmfunc ENDP       ;end of the function 
 end

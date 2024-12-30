@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-void __stdcall asmfunc(int p1 ,int p2);
+void __stdcall asmfunc();
 
 #ifdef __cplusplus
 }
@@ -17,17 +17,14 @@ void __stdcall asmfunc(int p1 ,int p2);
 
 int main() {
     system("cls");
-    int abc;
-    printf("assembly proc calling from  from C! \n");
-getch();
-
-    
-    asmfunc(3,5); //assembly proc calling
-   
+   int Array[5]={1,3,5,-4,7};
+   for(int i=0;i<5;i++){
+    printf("Elements of Array :%d ",Array[i]);
+   }
    getch();
-    
-    
-    printf("back to  C! \n"); // printing in c
+   printf("The sum of odd numbers is : %d",asmfunc());
+   
+    getch();
     
   
     
