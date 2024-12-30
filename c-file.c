@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-void __stdcall asmfunc();
+int __stdcall asmfunc();
 
 #ifdef __cplusplus
 }
